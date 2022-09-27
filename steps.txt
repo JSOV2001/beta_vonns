@@ -1,0 +1,17 @@
+Run the following nodes:
+
+1. pointcloud2_converter.py
+
+Este node va a tomar la información LaserScan del LiDAR y lo va transformar en información PointCloud2 con la que ROS1 puede trabajar.
+
+2. transform_broadcaster.py
+
+Este node va a generar una transformación entre el frame estático inicial del hokuyo y cada nuevo frame que salga con el angulo que rota la plataforma.
+
+3. transform_listener.py
+
+Este node va a tomar la nube de puntos de cada nuevo angulo, los cambia para que mantengan la misma ubicación pero dentro del frame estático inicial.
+
+4. pointcloud2_client.py
+
+Este node ensambla todas las nubes de puntos 
